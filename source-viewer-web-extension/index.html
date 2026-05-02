@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Source Code Viewer — Chrome Extension</title>
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="icon"><img src="./medias/icon128.png" width="24" height="24" alt="" /></div>
+      Source Code Viewer
+    </a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="https://github.com/Kobee1203/source-viewer-web-extension" target="_blank">GitHub</a>
+    </div>
+    <a href="https://chromewebstore.google.com/detail/source-code-viewer/ninadapabgjafeobaoomggobomaogcdi"
+      target="_blank" class="btn-install">Install free →</a>
+  </nav>
+
+  <!-- HERO -->
+  <section style="position:relative; overflow:hidden;">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="hero">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Chrome Extension · v1.0.0
+        </div>
+        <h1>View source code<br><span>the way it should be</span></h1>
+        <p class="hero-desc">
+          Stop squinting at plain, unstyled browser source. Source Code Viewer adds syntax highlighting and beautiful
+          formatting to every page — right from the context menu.
+        </p>
+        <div class="hero-actions">
+          <a href="https://chromewebstore.google.com/detail/source-code-viewer/ninadapabgjafeobaoomggobomaogcdi"
+            target="_blank" class="btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5" />
+              <path d="M2 12l10 5 10-5" />
+            </svg>
+            Add to Chrome
+          </a>
+          <a href="https://github.com/Kobee1203/source-viewer-web-extension" target="_blank" class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="hero-meta">
+          <span><span class="dot">●</span> Free & Open Source</span>
+          <span><span class="dot">●</span> GPL-3.0</span>
+          <span><span class="dot">●</span> 84 KB</span>
+        </div>
+      </div>
+
+      <!-- CODE WINDOW -->
+      <div class="hero-visual">
+        <div class="code-window">
+          <div class="window-bar">
+            <span class="dot-red"></span>
+            <span class="dot-amber"></span>
+            <span class="dot-green"></span>
+            <span class="window-title">view-source: example.com/index.html</span>
+          </div>
+          <div class="code-body">
+            <div><span class="ln">1</span><span class="com">&lt;!DOCTYPE html&gt;</span></div>
+            <div><span class="ln">2</span><span class="kw">&lt;html</span> <span class="fn">lang</span>=<span class="str">"en"</span><span class="kw">&gt;</span></div>
+            <div><span class="ln">3</span><span class="kw">&lt;head&gt;</span></div>
+            <div><span class="ln">4</span>&nbsp;&nbsp;<span class="kw">&lt;meta</span> <span class="fn">charset</span>=<span class="str">"UTF-8"</span><span class="kw">&gt;</span></div>
+            <div><span class="ln">5</span>&nbsp;&nbsp;<span class="kw">&lt;title&gt;</span>Example<span class="kw">&lt;/title&gt;</span></div>
+            <div><span class="ln">6</span><span class="kw">&lt;/head&gt;</span></div>
+            <div><span class="ln">7</span><span class="kw">&lt;body</span> <span class="fn">class</span>=<span class="str">"dark-theme"</span><span class="kw">&gt;</span></div>
+            <div><span class="ln">8</span>&nbsp;&nbsp;<span class="com">&lt;!-- Main Content --&gt;</span></div>
+            <div><span class="ln">9</span>&nbsp;&nbsp;<span class="kw">&lt;div</span> <span class="fn">id</span>=<span class="str">"app"</span><span class="kw">&gt;</span></div>
+            <div><span class="ln">10</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">&lt;h1&gt;</span>Hello World<span class="kw">&lt;/h1&gt;</span></div>
+            <div><span class="ln">11</span>&nbsp;&nbsp;<span class="kw">&lt;/div&gt;</span></div>
+            <div><span class="ln">12</span><span class="kw">&lt;/body&gt;</span></div>
+            <div><span class="ln">13</span><span class="kw">&lt;/html&gt;</span><span class="cursor"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- MEDIA / SCREENSHOTS -->
+  <section class="section" id="screenshots">
+    <p class="section-label">// screenshots &amp; demo</p>
+    <h2>See it in <span>action</span></h2>
+    <p class="section-desc">Watch the extension transform raw browser source into beautifully highlighted, readable
+      code.</p>
+
+    <div class="media-grid">
+      <!-- Video 1 -->
+      <div class="media-card">
+        <div class="thumb">
+          <iframe width="1165" height="705" src="https://www.youtube.com/embed/5pK-8O-_5YQ"
+            title="Web Extension: Source Code Viewer" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="media-caption">// context menu activation demo</div>
+      </div>
+
+      <!-- Screenshot 1 -->
+      <div class="media-card">
+        <div class="thumb">
+          <img src="./medias/source-code-viewer.png" alt="Source Code Viewer screenshot 1">
+        </div>
+        <div class="media-caption">// syntax highlighted HTML source</div>
+      </div>
+
+      <!-- Screenshot 2 -->
+      <div class="media-card">
+        <div class="thumb">
+          <img src="./medias/source-code-viewer-2.png" alt="Source Code Viewer screenshot 2">
+        </div>
+        <div class="media-caption">// Auto Formatting</div>
+      </div>
+    </div>
+
+    <p style="margin-top:1.25rem; font-size:0.8rem; color:var(--muted); font-family:var(--mono);">
+      // more screenshots available on the
+      <a href="https://chromewebstore.google.com/detail/source-code-viewer/ninadapabgjafeobaoomggobomaogcdi"
+        target="_blank" style="color:var(--accent); text-decoration:none;">Chrome Web Store listing ↗</a>
+    </p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <p class="section-label">// features</p>
+    <h2>Everything a dev<br><span>actually needs</span></h2>
+    <p class="section-desc">Built for developers who spend time reading source code. No bloat, no tracking, no nonsense.
+    </p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3>Syntax Highlighting</h3>
+        <p>Automatic language detection with beautiful, readable colorization for HTML, CSS, JavaScript and more.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📐</div>
+        <h3>Auto Formatting</h3>
+        <p>Minified or unformatted source gets automatically indented and structured for maximum readability.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🖱️</div>
+        <h3>Context Menu</h3>
+        <p>Right-click any page and select "View Source" to instantly open the formatted viewer. No extra steps.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Toolbar Icon</h3>
+        <p>One-click access directly from the Chrome toolbar — view the current page's source without leaving the tab.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;">
+      <div>
+        <p class="section-label">// how it works</p>
+        <h2>Three ways to<br><span>view source</span></h2>
+        <p class="section-desc" style="margin-bottom:0;">Simple, fast, and always available — exactly where you expect
+          it.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num-col">
+            <div class="step-num">01</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3>Install the extension</h3>
+            <p>Add Source Code Viewer from the Chrome Web Store. One click, no setup required.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num-col">
+            <div class="step-num">02</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3>Open any page</h3>
+            <p>Navigate to any website. Right-click anywhere on the page and choose "View Page Source" from the context
+              menu.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num-col">
+            <div class="step-num">03</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3>Read beautiful code</h3>
+            <p>Source Code Viewer opens the page source with full syntax highlighting and clean formatting.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">version</div>
+        <div class="value accent">1.0.0</div>
+      </div>
+      <div class="info-card">
+        <div class="label">extension size</div>
+        <div class="value">84 KB</div>
+      </div>
+      <div class="info-card">
+        <div class="label">languages</div>
+        <div class="value">EN / FR</div>
+      </div>
+      <div class="info-card">
+        <div class="label">license</div>
+        <div class="value">GPL-3.0</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <p class="section-label" style="margin-bottom:1rem;">// get started</p>
+    <h2>Ready to read code<br><span>the right way?</span></h2>
+    <p>Free. Open source. No account needed. Install in seconds.</p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="https://chromewebstore.google.com/detail/source-code-viewer/ninadapabgjafeobaoomggobomaogcdi"
+        target="_blank" class="btn-primary" style="font-size:1rem; padding: 0.85rem 2rem;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
+        </svg>
+        Add to Chrome — It's Free
+      </a>
+      <a href="https://github.com/Kobee1203/source-viewer-web-extension" target="_blank" class="btn-secondary"
+        style="font-size:1rem; padding: 0.85rem 2rem;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+        </svg>
+        Source on GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="copyright">© 2026 Kobee1203 · GPL-3.0 License</span>
+    <div class="links">
+      <a href="https://github.com/Kobee1203/source-viewer-web-extension" target="_blank">GitHub</a>
+      <a href="https://chromewebstore.google.com/detail/source-code-viewer/ninadapabgjafeobaoomggobomaogcdi"
+        target="_blank">Chrome Store</a>
+      <a href="https://github.com/Kobee1203/source-viewer-web-extension/issues" target="_blank">Contact</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
