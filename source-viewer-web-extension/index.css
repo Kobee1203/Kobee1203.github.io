@@ -482,3 +482,56 @@
     .nav-links { display: none; }
     .cta-section { margin: 0 1rem 3rem; }
   }
+
+  /* ── MODAL ── */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(13, 15, 20, 0.9);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-content img, .modal-content iframe {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    border: 1px solid var(--border);
+  }
+
+  .modal-content iframe {
+    width: 1165px;
+    aspect-ratio: 16/9;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    color: var(--text);
+    font-size: 2.5rem;
+    font-weight: 300;
+    cursor: pointer;
+    z-index: 10000;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+
+  .modal-close:hover {
+    color: var(--accent);
+  }
