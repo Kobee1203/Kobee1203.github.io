@@ -342,7 +342,7 @@
   .media-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.25rem;
+    gap: 1rem;
   }
 
   .media-card {
@@ -382,8 +382,8 @@
   .play-btn svg { width: 20px; height: 20px; fill: #0d0f14; margin-left: 3px; }
 
   .media-caption {
-    padding: 0.85rem 1rem;
-    font-size: 0.85rem; color: var(--muted); font-family: var(--mono);
+    padding: 0.85rem 0.85rem;
+    font-size: 0.75rem; color: var(--muted); font-family: var(--mono);
   }
 
   /* Placeholder for images that might not load */
