@@ -4,7 +4,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Source Code Viewer — Browser Extension</title>
+
+  <!-- Primary meta tags -->
+  <title>Source Code Viewer — Highlight &amp; Format HTML, CSS, JS, JSON &amp; XML | Chrome &amp; Firefox</title>
+  <meta name="description"
+    content="Free, open-source Chrome &amp; Firefox extension that formats and syntax-highlights web page source — HTML, CSS, JavaScript, JSON &amp; XML — with light/dark themes, code folding and a built-in font viewer.">
+  <meta name="keywords"
+    content="source code viewer, view page source, syntax highlighting, code formatter, code beautifier, pretty print, HTML viewer, CSS viewer, JavaScript viewer, JSON viewer, XML viewer, font viewer, browser extension, Chrome extension, Firefox add-on, developer tools">
+  <meta name="author" content="Nicolas Dos Santos">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0d0f14">
+  <link rel="canonical" href="https://kobee1203.github.io/source-viewer-web-extension/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Source Code Viewer">
+  <meta property="og:title" content="Source Code Viewer — Highlight &amp; Format HTML, CSS, JS, JSON &amp; XML">
+  <meta property="og:description"
+    content="Free, open-source Chrome &amp; Firefox extension that formats and syntax-highlights web page source, with light/dark themes, code folding and a built-in font viewer.">
+  <meta property="og:url" content="https://kobee1203.github.io/source-viewer-web-extension/">
+  <meta property="og:image"
+    content="https://kobee1203.github.io/source-viewer-web-extension/medias/marquee-1400x560.png">
+  <meta property="og:image:width" content="1400">
+  <meta property="og:image:height" content="560">
+  <meta property="og:image:alt" content="Source Code Viewer — syntax-highlighted source code shown in the browser extension">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Source Code Viewer — Highlight &amp; Format HTML, CSS, JS, JSON &amp; XML">
+  <meta name="twitter:description"
+    content="Free, open-source Chrome &amp; Firefox extension that formats and syntax-highlights web page source, with themes, code folding and a built-in font viewer.">
+  <meta name="twitter:image"
+    content="https://kobee1203.github.io/source-viewer-web-extension/medias/marquee-1400x560.png">
+  <meta name="twitter:image:alt" content="Source Code Viewer — syntax-highlighted source code shown in the browser extension">
+
   <link rel="icon" type="image/png" href="./favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +46,49 @@
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./index.css">
+
+  <!-- Structured data: browser extension -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Source Code Viewer",
+    "alternateName": "Source Code & Font Viewer",
+    "operatingSystem": "Chrome, Firefox",
+    "applicationCategory": "DeveloperApplication",
+    "softwareVersion": "1.7.0",
+    "description": "Free, open-source Chrome & Firefox extension that formats and syntax-highlights web page source — HTML, CSS, JavaScript, JSON & XML — with light/dark themes, code folding and a built-in font viewer.",
+    "url": "https://kobee1203.github.io/source-viewer-web-extension/",
+    "image": "https://kobee1203.github.io/source-viewer-web-extension/medias/marquee-1400x560.png",
+    "browserRequirements": "Requires Google Chrome or Mozilla Firefox",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Nicolas Dos Santos",
+      "url": "https://github.com/Kobee1203"
+    },
+    "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+    "downloadUrl": [
+      "https://chromewebstore.google.com/detail/source-code-viewer/ninadapabgjafeobaoomggobomaogcdi",
+      "https://addons.mozilla.org/firefox/addon/source-code-viewer/"
+    ],
+    "softwareHelp": "https://github.com/Kobee1203/source-viewer-web-extension",
+    "featureList": [
+      "Syntax highlighting for HTML, CSS, JavaScript, JSON and XML",
+      "Automatic code formatting and beautification",
+      "In-place formatting for raw CSS/JS/JSON/XML files",
+      "Light and dark themes",
+      "Word wrap, line numbers and code folding",
+      "Clickable links between resources",
+      "Built-in font viewer with glyph grid"
+    ]
+  }
+  </script>
 </head>
 
 <body>
