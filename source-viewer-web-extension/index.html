@@ -85,7 +85,9 @@
       "Light and dark themes",
       "Word wrap, line numbers and code folding",
       "Clickable links between resources",
-      "Built-in font viewer with glyph grid"
+      "Built-in font viewer with glyph grid",
+      "Full-text search across the entire source",
+      "Download the formatted source"
     ]
   }
   </script>
@@ -204,7 +206,7 @@
       <!-- Video 1 -->
       <div class="media-card">
         <div class="thumb">
-          <iframe width="1165" height="705" src="https://www.youtube.com/embed/5pK-8O-_5YQ"
+          <iframe width="1165" height="705" src="https://www.youtube.com/embed/wcUPDDmoUFg?si=eDwJ1JUuS7YKXrNl"
             title="Web Extension: Source Code Viewer" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -215,69 +217,45 @@
       <!-- Screenshot 1 -->
       <div class="media-card">
         <div class="thumb">
-          <img src="./medias/source-code-viewer.png" alt="Source Code Viewer screenshot 1">
+          <img src="./medias/source-code-viewer-1.png" alt="Source Code Viewer showing syntax-highlighted HTML with word wrap, the search bar open and the theme menu">
         </div>
-        <div class="media-caption">// Syntax highlighted HTML/JS/CSS/JSON/XML</div>
+        <div class="media-caption">// Syntax highlighted HTML/JS/CSS/JSON/XML, full-text search, themes</div>
       </div>
 
       <!-- Screenshot 2 -->
       <div class="media-card">
         <div class="thumb">
-          <img src="./medias/source-code-viewer-2.png" alt="Source Code Viewer screenshot 2">
+          <img src="./medias/source-code-viewer-2.png" alt="Source Code Viewer showing a formatted CSS file with word wrap, code folding and clickable font URLs">
         </div>
-        <div class="media-caption">// Auto Formatting</div>
+        <div class="media-caption">// Auto formatting, line wrapping, code folding, clickable links</div>
       </div>
 
       <!-- Screenshot 3 -->
       <div class="media-card">
         <div class="thumb">
-          <img src="./medias/source-code-viewer-3.png" alt="Source Code Viewer screenshot 3">
+          <img src="./medias/source-code-viewer-3.png" alt="Source Code Viewer showing a formatted JSON file with code folding in a light theme">
         </div>
-        <div class="media-caption">// Line wrapping</div>
+        <div class="media-caption">// JSON formatting, code folding, light &amp; dark themes</div>
       </div>
 
       <!-- Screenshot 4 -->
       <div class="media-card">
         <div class="thumb">
-          <img src="./medias/source-code-viewer-4.png" alt="Source Code Viewer screenshot 4">
+          <img src="./medias/source-code-viewer-4.png" alt="Font viewer previewing a web font in dark mode with adjustable sample text, size, bold and italic">
         </div>
-        <div class="media-caption">// Multiple themes</div>
+        <div class="media-caption">// Font viewer — live preview, size, weight &amp; style</div>
       </div>
 
       <!-- Screenshot 5 -->
       <div class="media-card">
         <div class="thumb">
-          <img src="./medias/source-code-viewer-5.png" alt="Source Code Viewer screenshot 5">
-        </div>
-        <div class="media-caption">// URLs clickable</div>
-      </div>
-
-      <!-- Screenshot 6 -->
-      <div class="media-card">
-        <div class="thumb">
-          <img src="./medias/source-code-viewer-6.png" alt="Source Code Viewer showing formatted JSON with code folding">
-        </div>
-        <div class="media-caption">// JSON &amp; code folding</div>
-      </div>
-
-      <!-- Screenshot 7 -->
-      <div class="media-card">
-        <div class="thumb">
-          <img src="./medias/source-code-viewer-7.png" alt="Font viewer previewing a web font with adjustable sample text, size, weight and style">
-        </div>
-        <div class="media-caption">// Font viewer — live preview</div>
-      </div>
-
-      <!-- Screenshot 8 -->
-      <div class="media-card">
-        <div class="thumb">
-          <img src="./medias/source-code-viewer-8.png" alt="Font viewer glyph grid showing the characters a font covers">
+          <img src="./medias/source-code-viewer-5.png" alt="Font viewer glyph grid showing the characters a font covers">
         </div>
         <div class="media-caption">// Font viewer — glyph grid</div>
       </div>
     </div>
 
-    <p style="margin-top:1.25rem; font-size:0.8rem; color:var(--muted); font-family:var(--mono);">
+    <p style="margin-top:1.25rem; font-size:0.8rem; color:var(--muted); font-family:var(--mono),serif;">
       // More details available on the
       <a href="#"
         target="_blank" style="color:var(--accent); text-decoration:none;" data-cfg-link="chrome">Chrome Web Store</a>
@@ -307,6 +285,18 @@
         <h3>Auto Formatting</h3>
         <p>Minified or unformatted source gets automatically indented and structured — even when you open a raw file
           directly.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <h3>Search in Source</h3>
+        <p>Hit Cmd/Ctrl+F to search the whole file — not just the visible part — with live highlighting, next/previous,
+          match case, whole word and regular expressions.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⬇️</div>
+        <h3>Download Source</h3>
+        <p>Save the formatted source in one click, with the right filename. HTML pages still render locally and
+          stylesheets keep finding their assets.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🔤</div>
