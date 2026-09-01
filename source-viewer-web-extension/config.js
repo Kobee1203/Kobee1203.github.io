@@ -1,6 +1,6 @@
 const EXTENSION_CONFIG = {
-  version: "1.8.0",
-  size: "500 KB",
+  version: "1.9.0",
+  size: "600 KB",
   license: "GPL-3.0",
   year: new Date().getFullYear(),
   links: {
