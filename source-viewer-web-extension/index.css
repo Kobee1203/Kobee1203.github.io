@@ -360,7 +360,8 @@
     position: relative; overflow: hidden;
   }
 
-  .media-card .thumb img {
+  .media-card .thumb img,
+  .media-card .thumb video {
     width: 100%; height: 100%; object-fit: cover;
   }
 
@@ -572,7 +573,7 @@
     justify-content: center;
   }
 
-  .modal-content img, .modal-content iframe {
+  .modal-content img, .modal-content iframe, .modal-content video {
     max-width: 100%;
     max-height: 90vh;
     border-radius: 8px;
@@ -580,7 +581,7 @@
     border: 1px solid var(--border);
   }
 
-  .modal-content iframe {
+  .modal-content iframe, .modal-content video {
     width: 1165px;
     aspect-ratio: 16/9;
   }

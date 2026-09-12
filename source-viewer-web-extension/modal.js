@@ -18,6 +18,9 @@ document.querySelectorAll(".thumb").forEach(thumb => {
     const content = thumb.firstElementChild.cloneNode(true);
     if (content.tagName === 'IFRAME') {
       content.style.pointerEvents = "auto";
+    } else if (content.tagName === 'VIDEO') {
+      content.controls = true;
+      content.autoplay = true;
     }
     modalBody.appendChild(content);
     modal.style.display = "flex";
@@ -25,6 +28,10 @@ document.querySelectorAll(".thumb").forEach(thumb => {
 });
 
 const closeModal = () => {
+  const video = modalBody.querySelector("video");
+  if (video) {
+    video.pause();
+  }
   modal.style.display = "none";
   modalBody.innerHTML = ""; 
 };
