@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Source Code Editor</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="stylesheet" href="../shared/privacy.css">
+</head>
+<body>
+<a href="./" class="back-link">&larr; Back to Source Code Editor</a>
+<h1>Privacy Policy</h1>
+<p class="date">Last updated: November 7, 2026</p>
+
+<h2>1. Overview</h2>
+<p>
+  <strong>Source Code Editor</strong> is an open-source browser extension developed by Nicolas Dos Santos.
+  It runs entirely in your browser. The developer operates no server for it and receives no data from it:
+  the extension does not collect, transmit, sell or share any personal data.
+</p>
+
+<h2>2. Data Collection and Usage</h2>
+<p>
+  The extension <strong>contains no analytics, telemetry, advertising or tracking</strong> of any kind.
+</p>
+<ul>
+  <li>Your files, the repositories you clone and everything you edit stay on your device.</li>
+  <li>The extension never sends your code, your file names or your browsing history to the developer or to any third party.</li>
+</ul>
+
+<h2>3. Data Stored in Your Browser</h2>
+<p>The extension stores the following data locally, in your browser, and nowhere else:</p>
+<ul>
+  <li><strong>Your workspace</strong>: the files you create, import or clone are kept in the browser's private file system (OPFS), together with the list of recently opened folders and the permission handles of the local folders you opened.</li>
+  <li><strong>Preferences and layout</strong>: settings, color theme, open editors, layout and cursor positions, kept in the browser's local storage.</li>
+  <li><strong>Git author</strong>: the name and email you enter for your commits, kept in your settings.</li>
+  <li><strong>Access tokens</strong>: when you give an access token to reach a private Git repository (or sign in with GitHub), it is kept in <code>storage.local</code> of the extension only. It is never put in synchronized storage, in settings, in repository addresses or in exports, and you can delete it at any time with <em>Git: Forget Access Tokens</em> or by removing the extension.</li>
+</ul>
+<p>Uninstalling the extension removes this data.</p>
+
+<h2>4. Network Requests</h2>
+<p>The extension only contacts the servers you ask it to:</p>
+<ul>
+  <li><strong>Git servers</strong>: the repository address you clone, pull from or push to (for example github.com or gitlab.com, or your own server), and only for those operations. Your access token, if any, is sent to that server and to no other.</li>
+  <li><strong>GitHub sign-in</strong>: if you choose to sign in with GitHub, the extension uses GitHub's device flow: it contacts <code>github.com</code> to obtain a code, you authorize the application on github.com, and GitHub gives the extension an access token (scope <code>repo</code>, which GitHub requires to push to private repositories). You can revoke it at any time in your GitHub settings, under Applications.</li>
+</ul>
+<p>The Git servers and GitHub handle your data under their own privacy policies.</p>
+
+<h2>5. Permissions Justification</h2>
+<ul>
+  <li><strong>storage</strong>: to keep your preferences, workspace state and access tokens on your device.</li>
+  <li><strong>activeTab / tabs</strong>: to read the address of the current tab and open the editor (in a tab or a standalone window) on the repository you are viewing.</li>
+  <li><strong>contextMenus</strong>: to add <em>Open repository in Source Code Editor</em> on GitHub and GitLab pages.</li>
+  <li><strong>Host access to all sites</strong>: Git servers do not allow requests from browser extensions' pages by default; this access lets the editor reach the server of any repository you choose to clone or push to. It is only used for those requests.</li>
+  <li><strong>nativeMessaging (optional)</strong>: only if you install the optional Local Companion program and grant this permission, so that the editor can work with your disk and Git directly. It is off by default.</li>
+</ul>
+
+<h2>6. Third-Party Services</h2>
+<p>
+  The extension contains no third-party tracking scripts, analytics tools or advertising networks.
+</p>
+
+<h2>7. Open Source and Contact</h2>
+<p>
+  The full source code of this extension is licensed under GPL-3.0 and publicly auditable on GitHub:
+  <a href="https://github.com/Kobee1203/source-code-editor-web-extension" target="_blank" rel="noopener noreferrer">
+    https://github.com/Kobee1203/source-code-editor-web-extension
+  </a>.
+</p>
+<p>
+  If you have any questions regarding this policy, feel free to open an issue on GitHub.
+</p>
+</body>
+</html>

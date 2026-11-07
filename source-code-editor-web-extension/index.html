@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary meta tags -->
+  <title>Source Code Editor - A VS Code workbench and Git in your browser | Chrome, Edge &amp; Firefox</title>
+  <meta name="description" content="Free, open-source Chrome, Edge &amp; Firefox extension that opens a full VS Code workbench in a browser tab: your local folders, repositories cloned from GitHub or GitLab, Git (commit, push, pull, merge), themes and 14 languages. Everything stays in your browser.">
+  <meta name="keywords"
+    content="source code editor, browser IDE, VS Code in the browser, web IDE, Git in the browser, clone repository, merge conflicts, Monaco editor, browser extension, Chrome extension, Edge extension, Firefox add-on, developer tools">
+  <meta name="author" content="Nicolas Dos Santos">
+  <!-- Not indexed until the extension is published in the stores: replace with "index, follow, max-image-preview:large" then -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0d0f14">
+  <link rel="canonical" href="https://kobee1203.github.io/source-code-editor-web-extension/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Source Code Editor">
+  <meta property="og:title" content="Source Code Editor - A VS Code workbench and Git in your browser">
+  <meta property="og:description" content="Free, open-source Chrome, Edge &amp; Firefox extension that opens a full VS Code workbench in a browser tab: your local folders, repositories cloned from GitHub or GitLab, Git (commit, push, pull, merge), themes and 14 languages. Everything stays in your browser.">
+  <meta property="og:url" content="https://kobee1203.github.io/source-code-editor-web-extension/">
+  <meta property="og:image" content="https://kobee1203.github.io/source-code-editor-web-extension/medias/workbench.png">
+  <meta property="og:image:alt" content="Source Code Editor: the VS Code workbench with an explorer, tabs and a Markdown file, in a browser tab">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Source Code Editor - A VS Code workbench and Git in your browser">
+  <meta name="twitter:description" content="Free, open-source Chrome, Edge &amp; Firefox extension that opens a full VS Code workbench in a browser tab: your local folders, repositories cloned from GitHub or GitLab, Git (commit, push, pull, merge), themes and 14 languages. Everything stays in your browser.">
+  <meta name="twitter:image" content="https://kobee1203.github.io/source-code-editor-web-extension/medias/workbench.png">
+  <meta name="twitter:image:alt" content="Source Code Editor: the VS Code workbench with an explorer, tabs and a Markdown file, in a browser tab">
+
+  <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../shared/index.css">
+
+  <!-- Structured data: browser extension -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Source Code Editor",
+    "operatingSystem": "Chrome, Edge, Firefox",
+    "applicationCategory": "DeveloperApplication",
+    "softwareVersion": "0.1.0",
+    "description": "Free, open-source browser extension that opens a full VS Code workbench with Git in a browser tab.",
+    "url": "https://kobee1203.github.io/source-code-editor-web-extension/",
+    "image": "https://kobee1203.github.io/source-code-editor-web-extension/medias/workbench.png",
+    "browserRequirements": "Requires Google Chrome, Microsoft Edge or Mozilla Firefox",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Nicolas Dos Santos",
+      "url": "https://github.com/Kobee1203"
+    },
+    "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+    "featureList": [
+      "VS Code workbench: explorer, search, source control, command palette, settings, themes",
+      "Open local folders (Chromium) or import them (Firefox); files are stored in the browser",
+      "Clone public and private Git repositories into the browser",
+      "Stage, commit, push, pull and merge, with conflicts resolved in the editor",
+      "Syntax highlighting for 15 languages, Markdown preview with Mermaid diagrams",
+      "14 interface languages",
+      "No telemetry: everything stays in your browser"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="icon"><img src="./medias/icon128.png" width="24" height="24" alt="" /></div>
+      Source Code Editor
+    </a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="./privacy.html">Privacy</a>
+      <a href="#" target="_blank" data-cfg-link="github">GitHub</a>
+    </div>
+    <span class="btn-soon">Coming soon</span>
+  </nav>
+
+  <!-- HERO -->
+  <section style="position:relative; overflow:hidden;">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="hero">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Browser Extension · v<span data-cfg-text="version"></span> · coming soon
+        </div>
+        <h1>A real code editor<br><span>in a browser tab</span></h1>
+        <p class="hero-desc">
+          Source Code Editor opens the VS Code workbench from your toolbar: your folders, repositories cloned from
+          GitHub or GitLab, Git with commits, push, pull and merge, themes and 14 languages. Nothing to install
+          besides the extension, and nothing leaves your browser.
+        </p>
+        <div class="hero-actions">
+          <a href="#" target="_blank" class="btn-secondary" data-cfg-link="github">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="hero-meta">
+          <span><span class="dot">●</span> Free &amp; Open Source</span>
+          <span><span class="dot">●</span> <span data-cfg-text="license"></span></span>
+          <span><span class="dot">●</span> <span data-cfg-text="browsers"></span></span>
+        </div>
+      </div>
+
+      <!-- WORKBENCH WINDOW -->
+      <div class="hero-visual">
+        <div class="code-window">
+          <div class="window-bar">
+            <span class="dot-red"></span>
+            <span class="dot-amber"></span>
+            <span class="dot-green"></span>
+            <span class="window-title">Source Code Editor</span>
+          </div>
+          <img src="./medias/workbench.png" width="1440" height="860"
+            alt="Source Code Editor: the VS Code workbench with an explorer showing a cloned repository, tabs and a Markdown file">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- MEDIA / SCREENSHOTS -->
+  <section class="section" id="screenshots">
+    <p class="section-label">// screenshots</p>
+    <h2>See it in <span>action</span></h2>
+    <p class="section-desc">The editor you know, with Git that works without a terminal.</p>
+
+    <div class="media-grid">
+      <div class="media-card">
+        <div class="thumb">
+          <img src="./medias/workbench.png" alt="The workbench with the explorer, the editor tabs and a Markdown file">
+        </div>
+        <div class="media-caption">// The workbench: explorer, tabs, command palette, themes and settings</div>
+      </div>
+
+      <div class="media-card">
+        <div class="thumb">
+          <img src="./medias/source-control.png"
+            alt="The Source Control view with a changed file and its diff against the last commit">
+        </div>
+        <div class="media-caption">// Source Control: changes, diffs, stage, commit, push and pull</div>
+      </div>
+
+      <div class="media-card">
+        <div class="thumb">
+          <img src="./medias/merge-conflict.png"
+            alt="A file with conflict markers and the actions to accept the current change, the incoming change or both">
+        </div>
+        <div class="media-caption">// Merge conflicts, resolved in the editor with one click</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <p class="section-label">// features</p>
+    <h2>Everything you need<br><span>to read and change code</span></h2>
+    <p class="section-desc">Built for developers who want an editor wherever a browser is. No account, no tracking.
+    </p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🧩</div>
+        <h3>The VS Code workbench</h3>
+        <p>Explorer, search, source control, command palette, settings editor, split editors and themes: the same
+          interface, in a tab or in a standalone window.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📁</div>
+        <h3>Your files, kept in the browser</h3>
+        <p>Open a local folder on Chromium, import one on Firefox, or start from sample files. Your work is stored in
+          the browser and is still there after a reload.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⬇️</div>
+        <h3>Clone a repository</h3>
+        <p>Clone a public or private repository from GitHub, GitLab or any Git server over HTTPS, straight into the
+          browser.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌿</div>
+        <h3>Git without a terminal</h3>
+        <p>Stage, commit, create and switch branches, push, pull and fetch, with diffs and the status of every file
+          next to its name.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔀</div>
+        <h3>Merge and resolve conflicts</h3>
+        <p>Pull merges what others pushed. Conflicts get their own group, and you accept the current change, the
+          incoming one or both without leaving the editor.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔑</div>
+        <h3>Private repositories</h3>
+        <p>Sign in with an access token. It stays in this browser, is never synchronized, and you can forget it at any
+          time.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📝</div>
+        <h3>Markdown, Mermaid &amp; 15 languages</h3>
+        <p>Syntax highlighting for TypeScript, JavaScript, JSON, HTML, CSS, Python, Rust, Go and more, plus a Markdown
+          preview with Mermaid diagrams.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h3>14 languages</h3>
+        <p>The interface speaks English, French, German, Spanish, Italian, Portuguese, Czech, Polish, Russian, Turkish,
+          Japanese, Korean and Chinese (simplified and traditional).</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;">
+      <div>
+        <p class="section-label">// how it works</p>
+        <h2>From the toolbar<br><span>to your first commit</span></h2>
+        <p class="section-desc" style="margin-bottom:0;">Three steps, no setup.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num-col">
+            <div class="step-num">01</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3>Open the editor</h3>
+            <p>Click the toolbar button or press <code>Alt+Shift+E</code>. On a GitHub or GitLab repository page, the
+              context menu opens that repository directly.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num-col">
+            <div class="step-num">02</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3>Bring your code</h3>
+            <p>Open or import a folder, or choose <em>Git: Clone Repository</em> and paste an address. The menu at the
+              bottom left gathers these commands.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num-col">
+            <div class="step-num">03</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-content">
+            <h3>Edit, commit, push</h3>
+            <p>Change files, review the diff in Source Control, commit, and push the branch back to the remote.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">version</div>
+        <div class="value accent" data-cfg-text="version"></div>
+      </div>
+      <div class="info-card">
+        <div class="label">browsers</div>
+        <div class="value">3 browsers</div>
+      </div>
+      <div class="info-card">
+        <div class="label">languages</div>
+        <div class="value">14 locales</div>
+      </div>
+      <div class="info-card">
+        <div class="label">license</div>
+        <div class="value" data-cfg-text="license"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <p class="section-label" style="margin-bottom:1rem;">// follow the project</p>
+    <h2>Coming soon<br><span>to your browser</span></h2>
+    <p>Free. Open source. No account needed. Everything stays in your browser.</p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="#" target="_blank" class="btn-secondary" style="font-size:1rem; padding: 0.85rem 2rem;"
+        data-cfg-link="github">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        Source on GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="copyright">© <span data-cfg-text="year"></span> Kobee1203 · <span data-cfg-text="license"></span> License</span>
+    <div class="links">
+      <a href="#" target="_blank" data-cfg-link="github">GitHub</a>
+      <a href="./privacy.html">Privacy</a>
+      <a href="#" target="_blank" data-cfg-link="issues">Contact</a>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="media-modal" class="modal">
+    <span class="modal-close">&times;</span>
+    <div class="modal-content" id="modal-body"></div>
+  </div>
+
+  <script src="./config.js"></script>
+  <script src="../shared/init-config.js"></script>
+  <script src="../shared/modal.js"></script>
+</body>
+
+</html>
