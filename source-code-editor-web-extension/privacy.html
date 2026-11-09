@@ -11,7 +11,7 @@
 <body>
 <a href="./" class="back-link">&larr; Back to Source Code Editor</a>
 <h1>Privacy Policy</h1>
-<p class="date">Last updated: November 7, 2026</p>
+<p class="date">Last updated: November 10, 2026</p>
 
 <h2>1. Overview</h2>
 <p>
@@ -34,6 +34,7 @@
 <ul>
   <li><strong>Your workspace</strong>: the files you create, import or clone are kept in the browser's private file system (OPFS), together with the list of recently opened folders and the permission handles of the local folders you opened.</li>
   <li><strong>Preferences and layout</strong>: settings, color theme, open editors, layout and cursor positions, kept in the browser's local storage.</li>
+  <li><strong>Synced settings</strong>: your settings, keybindings, snippets and the list of the extensions you installed (their identifiers only) are also written to <code>storage.sync</code> of the extension, so that they follow you to your other devices. If you are signed in to your browser's own sync (Chrome, Edge or Firefox), <em>the browser</em> sends them to its servers (Google, Microsoft or Mozilla) under its own privacy policy; the developer never receives them. Access tokens, your files and your repositories are never part of it. Another device that finds an extension in the list installs it from Open VSX (only if it contains no code). You can turn it off with <em>Settings Sync: Turn Off</em>, or in your browser's sync settings.</li>
   <li><strong>Git author</strong>: the name and email you enter for your commits, kept in your settings.</li>
   <li><strong>Access tokens</strong>: when you give an access token to reach a private Git repository (or sign in with GitHub), it is kept in <code>storage.local</code> of the extension only. It is never put in synchronized storage, in settings, in repository addresses or in exports, and you can delete it at any time with <em>Git: Forget Access Tokens</em> or by removing the extension.</li>
 </ul>
@@ -44,12 +45,13 @@
 <ul>
   <li><strong>Git servers</strong>: the repository address you clone, pull from or push to (for example github.com or gitlab.com, or your own server), and only for those operations. Your access token, if any, is sent to that server and to no other.</li>
   <li><strong>GitHub sign-in</strong>: if you choose to sign in with GitHub, the extension uses GitHub's device flow: it contacts <code>github.com</code> to obtain a code, you authorize the application on github.com, and GitHub gives the extension an access token (scope <code>repo</code>, which GitHub requires to push to private repositories). You can revoke it at any time in your GitHub settings, under Applications.</li>
+  <li><strong>Extension catalog</strong>: the Extensions view uses <code>open-vsx.org</code> (the open registry of the Eclipse Foundation). It contacts it when you search for extensions and when you install one, and to look for updates of the extensions you have installed, which means it learns <em>which extensions are installed</em>. The files of an installed extension (for example a theme) are loaded from there. Only extensions that contain no code (themes, icons, grammars, snippets and the like) can be installed.</li>
 </ul>
-<p>The Git servers and GitHub handle your data under their own privacy policies.</p>
+<p>The Git servers, GitHub and Open VSX handle your data under their own privacy policies.</p>
 
 <h2>5. Permissions Justification</h2>
 <ul>
-  <li><strong>storage</strong>: to keep your preferences, workspace state and access tokens on your device.</li>
+  <li><strong>storage</strong>: to keep your preferences, workspace state and access tokens on your device, and to sync your settings, keybindings and snippets through your browser's sync.</li>
   <li><strong>activeTab / tabs</strong>: to read the address of the current tab and open the editor (in a tab or a standalone window) on the repository you are viewing.</li>
   <li><strong>contextMenus</strong>: to add <em>Open repository in Source Code Editor</em> on GitHub and GitLab pages.</li>
   <li><strong>Host access to all sites</strong>: Git servers do not allow requests from browser extensions' pages by default; this access lets the editor reach the server of any repository you choose to clone or push to. It is only used for those requests.</li>
