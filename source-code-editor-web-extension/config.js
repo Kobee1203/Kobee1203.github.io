@@ -5,7 +5,7 @@ const EXTENSION_CONFIG = {
   year: new Date().getFullYear(),
   links: {
     github: "https://github.com/Kobee1203/source-code-editor-web-extension",
-    issues: "https://github.com/Kobee1203/source-code-editor-web-extension/issues"
+    issues: "https://github.com/Kobee1203/Kobee1203.github.io/issues/new?template=source-code-editor.yml"
     // Store links (chrome, edge, firefox) are added here, and the install buttons back in index.html, at the release
   }
 };

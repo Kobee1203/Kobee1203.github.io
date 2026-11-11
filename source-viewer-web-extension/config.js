@@ -1,5 +1,5 @@
 const EXTENSION_CONFIG = {
-  version: "1.10.0",
+  version: "1.14.0",
   size: "700 KB",
   license: "GPL-3.0",
   year: new Date().getFullYear(),

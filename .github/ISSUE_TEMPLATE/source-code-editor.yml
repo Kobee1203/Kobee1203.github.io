@@ -1,0 +1,85 @@
+name: "Source Code Editor — Bug Report or Feature Request"
+description: "Submit a bug report, request a feature, or ask a question for Source Code Editor"
+title: "[Source Code Editor]: "
+labels: ["source-code-editor"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting an issue or suggestion for **Source Code Editor**.
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      options:
+        - "Bug Report"
+        - "Feature Request"
+        - "Question / Help"
+    validations:
+      required: true
+
+  - type: input
+    id: extension-version
+    attributes:
+      label: Extension Version
+      description: "Extension version currently installed (e.g. 1.0.0)"
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - "Google Chrome"
+        - "Microsoft Edge"
+        - "Brave / Other Chromium-based browser"
+        - "Mozilla Firefox"
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating System
+      placeholder: "macOS, Windows 11, Ubuntu Linux, ChromeOS..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "A clear and concise description of the bug or feature request."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to Reproduce
+      description: "Detailed steps to reproduce the behavior (for bug reports)."
+      placeholder: |
+        1. Click on the extension icon to launch the editor
+        2. Open a local folder via 'Open Folder'
+        3. ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected vs Actual Behavior
+      description: "What did you expect to happen, and what happened instead?"
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs-screenshots
+    attributes:
+      label: Console Logs / Screenshots
+      description: "Paste browser console logs (F12 > Console) or drag & drop screenshots/screen recordings."
+    validations:
+      required: false
